@@ -3,29 +3,29 @@ const projects = {
     kicker: "Robotics & Automation Systems",
     title: "UR5e Collaborative Assembly System",
     description:
-      "Designed a robotic assembly system that combines RTDE robot control, LLM-based reasoning, and VLM-based perception so a robot can reason about assembly tasks in a more adaptive way.",
+      "Designed a UR5e robotic assembly system integrating RTDE robot control, LLM-based reasoning, and VLM-based perception.",
     details: [
-      "Integrated robot control with language and vision reasoning for collaborative assembly.",
-      "Connected perception outputs to task planning and robot action execution.",
-      "Focused on systems that can better understand human intent and changing assembly conditions."
+      "Connected robot control with language and vision reasoning for collaborative assembly.",
+      "Built toward workflows where robots can interpret task context and adapt to changing assembly conditions.",
+      "Core stack: UR5e, RTDE, LLM reasoning, VLM perception, and robotic task execution."
     ]
   },
   agent: {
     kicker: "AI-enabled Robotic Agents",
     title: "Instruction-to-Action Robot Agent",
     description:
-      "Built an LLM-enabled robotic agent that interprets human instructions and converts them into robot actions, with planning logic for adaptive coordination across robotic systems.",
+      "Designed an LLM-enabled robotic agent that interprets human instructions and converts them into robot actions.",
     details: [
       "Fine-tuned machine-learning models to improve context understanding and task reasoning.",
-      "Developed multi-agent planning logic for task allocation, coordination, and execution.",
-      "Connected high-level human language to lower-level robot behaviors."
+      "Developed multi-agent planning logic for adaptive task allocation, coordination, and execution.",
+      "Focused on translating high-level human language into useful robot behavior."
     ]
   },
   vision: {
     kicker: "Computer Vision",
     title: "Adaptive Vision for Novel Objects",
     description:
-      "Developed an adaptive vision system that combines 3D point-cloud processing with VLM reasoning for identifying novel objects in robotic workflows.",
+      "Developed an adaptive vision system combining 3D point-cloud processing with VLM reasoning for novel-object identification.",
     details: [
       "Worked with 3D point-cloud processing for spatial object understanding.",
       "Designed and evaluated YOLO and SAM-based object detection methods.",
@@ -36,11 +36,44 @@ const projects = {
     kicker: "Planning & Control",
     title: "RRT-based Model Predictive Control",
     description:
-      "Developed an RRT-based Model Predictive Control framework for path planning and trajectory optimization in robotic systems.",
+      "Developed an RRT-based Model Predictive Control framework for path planning and trajectory optimization.",
     details: [
-      "Used sampling-based planning concepts to produce feasible motion paths.",
-      "Applied model predictive control ideas for trajectory optimization.",
-      "Built toward robotic motion that is both efficient and responsive to constraints."
+      "Used sampling-based planning concepts to produce feasible robotic paths.",
+      "Applied model predictive control ideas to optimize trajectories under constraints.",
+      "Built toward motion that is efficient, responsive, and practical for robot systems."
+    ]
+  },
+  penndot: {
+    kicker: "Internship",
+    title: "PennDOT Automated Driving System",
+    description:
+      "Developed and tested software systems using ROS to support message passing between network sensors.",
+    details: [
+      "Created MATLAB simulations to model and control autonomous vehicle systems.",
+      "Designed, built, and validated integrated camera, LiDAR, and radar systems.",
+      "Worked across software, sensors, and autonomous system validation."
+    ]
+  },
+  flowserve: {
+    kicker: "Industry Project",
+    title: "Flowserve Hydraulic Submergence Project",
+    description:
+      "Designed and developed a hydraulic test rig to investigate vortex formation in an upside-down pump configuration.",
+    details: [
+      "Conducted CFD and FEA simulations to optimize design parameters.",
+      "Used DFMEA to evaluate reliability and reduce system risk.",
+      "Connected mechanical design, simulation, and test validation."
+    ]
+  },
+  startup: {
+    kicker: "Entrepreneurship",
+    title: "Just-EnCase",
+    description:
+      "Founded a startup concept introducing a container with suction-cup technology for personal storage solutions.",
+    details: [
+      "Developed product positioning, branding, and business planning.",
+      "Worked through financial forecasting, accounting principles, and pitch development.",
+      "Connected mechanical product thinking with customer-focused entrepreneurship."
     ]
   }
 };
@@ -88,7 +121,7 @@ const sectionObserver = new IntersectionObserver(
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
     if (visible) setActiveNav(visible.target.id);
   },
-  { rootMargin: "-30% 0px -55% 0px", threshold: [0.1, 0.2, 0.4, 0.6] }
+  { rootMargin: "-30% 0px -55% 0px", threshold: [0.1, 0.25, 0.5] }
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
@@ -156,89 +189,3 @@ document.querySelectorAll("[data-close-modal]").forEach((button) => {
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeModal();
 });
-
-const canvas = document.getElementById("hero-canvas");
-const context = canvas?.getContext("2d");
-const pointer = { x: 0, y: 0, active: false };
-let particles = [];
-
-function resizeCanvas() {
-  if (!canvas || !context) return;
-  const ratio = window.devicePixelRatio || 1;
-  canvas.width = Math.floor(canvas.offsetWidth * ratio);
-  canvas.height = Math.floor(canvas.offsetHeight * ratio);
-  context.setTransform(ratio, 0, 0, ratio, 0, 0);
-  const count = Math.max(34, Math.min(76, Math.floor(canvas.offsetWidth / 18)));
-  particles = Array.from({ length: count }, () => ({
-    x: Math.random() * canvas.offsetWidth,
-    y: Math.random() * canvas.offsetHeight,
-    vx: (Math.random() - 0.5) * 0.32,
-    vy: (Math.random() - 0.5) * 0.32,
-    radius: Math.random() * 2.2 + 1.4
-  }));
-}
-
-function drawCanvas() {
-  if (!canvas || !context) return;
-  const width = canvas.offsetWidth;
-  const height = canvas.offsetHeight;
-  context.clearRect(0, 0, width, height);
-
-  const dark = root.classList.contains("dark");
-  context.fillStyle = dark ? "rgba(217, 192, 108, 0.78)" : "rgba(139, 117, 46, 0.62)";
-  context.strokeStyle = dark ? "rgba(217, 192, 108, 0.16)" : "rgba(57, 111, 92, 0.18)";
-
-  for (const particle of particles) {
-    particle.x += particle.vx;
-    particle.y += particle.vy;
-
-    if (particle.x < 0 || particle.x > width) particle.vx *= -1;
-    if (particle.y < 0 || particle.y > height) particle.vy *= -1;
-
-    if (pointer.active) {
-      const dx = particle.x - pointer.x;
-      const dy = particle.y - pointer.y;
-      const distance = Math.hypot(dx, dy);
-      if (distance < 150) {
-        particle.x += dx / Math.max(distance, 1);
-        particle.y += dy / Math.max(distance, 1);
-      }
-    }
-
-    context.beginPath();
-    context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-    context.fill();
-  }
-
-  for (let i = 0; i < particles.length; i += 1) {
-    for (let j = i + 1; j < particles.length; j += 1) {
-      const a = particles[i];
-      const b = particles[j];
-      const distance = Math.hypot(a.x - b.x, a.y - b.y);
-      if (distance < 126) {
-        context.globalAlpha = 1 - distance / 126;
-        context.beginPath();
-        context.moveTo(a.x, a.y);
-        context.lineTo(b.x, b.y);
-        context.stroke();
-      }
-    }
-  }
-
-  context.globalAlpha = 1;
-  requestAnimationFrame(drawCanvas);
-}
-
-if (canvas && context) {
-  resizeCanvas();
-  drawCanvas();
-  window.addEventListener("resize", resizeCanvas);
-  window.addEventListener("pointermove", (event) => {
-    pointer.x = event.clientX;
-    pointer.y = event.clientY;
-    pointer.active = true;
-  });
-  window.addEventListener("pointerleave", () => {
-    pointer.active = false;
-  });
-}
