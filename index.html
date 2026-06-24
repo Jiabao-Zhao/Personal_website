@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Jiabao Zhao is a Penn State mechanical engineer working on robotics, automation, LLM-enabled robotic agents, computer vision, and human-robot collaborative assembly."
+  />
+  <title>Jiabao Zhao | Robotics & Mechanical Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Jiabao Zhao home">JZ</a>
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <span class="nav-indicator" aria-hidden="true"></span>
+      <a class="nav-link is-active" href="#home">Home</a>
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#research">Research</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <span class="theme-icon" aria-hidden="true">Mode</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Mechanical Engineering MS | Robotics | AI-enabled automation</p>
+        <h1>Jiabao Zhao builds robotic systems that understand people and act with precision.</h1>
+        <p class="hero-text">
+          I am a Penn State mechanical engineer focused on human-robot collaborative assembly,
+          LLM/VLM-enabled robotic agents, computer vision, and autonomous systems. My work
+          connects rigorous mechanical engineering with adaptive AI planning for real-world robotics.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore Work</a>
+          <a class="button button-secondary" href="assets/Jiabao-Zhao-Resume.pdf">View Resume</a>
+        </div>
+      </div>
+
+      <aside class="hero-card reveal" aria-label="Portfolio snapshot">
+        <div class="profile-orbit" aria-hidden="true">
+          <div class="profile-core">JZ</div>
+          <span class="orbit-dot dot-one"></span>
+          <span class="orbit-dot dot-two"></span>
+          <span class="orbit-dot dot-three"></span>
+        </div>
+        <p class="card-label">Current focus</p>
+        <h2>Human-robot collaboration powered by LLMs, VLMs, and motion planning.</h2>
+        <div class="stat-grid">
+          <div>
+            <strong>4.0</strong>
+            <span>MS GPA</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>Publications</span>
+          </div>
+          <div>
+            <strong>UR5e</strong>
+            <span>Assembly systems</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="skill-ribbon" aria-label="Featured skills">
+        <button type="button" data-scroll-target="skills">Python</button>
+        <button type="button" data-scroll-target="skills">ROS</button>
+        <button type="button" data-scroll-target="skills">LLM</button>
+        <button type="button" data-scroll-target="skills">VLM</button>
+        <button type="button" data-scroll-target="skills">Computer Vision</button>
+        <button type="button" data-scroll-target="skills">C++</button>
+        <button type="button" data-scroll-target="skills">MATLAB</button>
+      </div>
+    </section>
+
+    <section class="section intro-section reveal" aria-label="Positioning">
+      <p>
+        My differentiator is range: I can reason about mechanical design, robot control,
+        perception, AI planning, and the human workflow around the system. I am not just trying
+        to make robots move. I am working on robotic collaborators that can interpret instructions,
+        adapt to new objects, and coordinate tasks in practical environments.
+      </p>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects at the edge of robotics, AI, and mechanical systems.</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card reveal" data-project="assembly">
+          <div class="project-visual assembly-visual" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="project-kicker">Robotics & Automation</p>
+          <h3>UR5e Collaborative Assembly System</h3>
+          <p>
+            Integrated RTDE robot control, LLM-based reasoning, and VLM-based perception
+            for a robotic assembly workflow.
+          </p>
+          <ul class="tag-list">
+            <li>UR5e</li>
+            <li>RTDE</li>
+            <li>LLM</li>
+            <li>VLM</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal" data-project="agent">
+          <div class="project-visual agent-visual" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="project-kicker">AI-enabled robotic agents</p>
+          <h3>Instruction-to-Action Robot Agent</h3>
+          <p>
+            Designed an LLM-enabled agent that interprets human instructions and converts
+            them into robot actions and coordinated task plans.
+          </p>
+          <ul class="tag-list">
+            <li>Fine-tuning</li>
+            <li>Task reasoning</li>
+            <li>Multi-agent planning</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal" data-project="vision">
+          <div class="project-visual vision-visual" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="project-kicker">Computer vision</p>
+          <h3>Adaptive Vision for Novel Objects</h3>
+          <p>
+            Combined 3D point-cloud processing with VLM reasoning and evaluated YOLO and
+            SAM-based detection methods.
+          </p>
+          <ul class="tag-list">
+            <li>Point clouds</li>
+            <li>YOLO</li>
+            <li>SAM</li>
+            <li>Perception</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal" data-project="mpc">
+          <div class="project-visual mpc-visual" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="project-kicker">Planning & control</p>
+          <h3>RRT-based Model Predictive Control</h3>
+          <p>
+            Developed a planning framework for path planning and trajectory optimization
+            in robotic systems.
+          </p>
+          <ul class="tag-list">
+            <li>RRT</li>
+            <li>MPC</li>
+            <li>Optimization</li>
+            <li>Gurobi</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-section" id="research">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Research</p>
+        <h2>Human language, robot planning, and adaptive manufacturing.</h2>
+      </div>
+      <div class="research-list">
+        <article class="research-item reveal">
+          <span>01</span>
+          <h3>COVILLM</h3>
+          <p>An adaptive human-robot collaborative assembly framework using large language models.</p>
+        </article>
+        <article class="research-item reveal">
+          <span>02</span>
+          <h3>Speech-to-Trajectory</h3>
+          <p>An LLM-enabled collaborative framework for generating new assembly tasks from verbal guidance.</p>
+        </article>
+        <article class="research-item reveal">
+          <span>03</span>
+          <h3>Adaptive Multi-Agent Manufacturing</h3>
+          <p>Task planning and coordination in multi-agent manufacturing systems using large language models.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Engineering experience across autonomy, hydraulics, and leadership.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span class="timeline-date">2025-present</span>
+          <div>
+            <h3>M.S. Mechanical Engineering, Penn State</h3>
+            <p>Graduate study focused on robotics, automation, AI-enabled agents, and mechanical systems. GPA: 4.0/4.0.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="timeline-date">2021-2025</span>
+          <div>
+            <h3>B.S. Mechanical Engineering, Penn State</h3>
+            <p>Mechanical Engineering with a Minor in Entrepreneurship and Innovation. GPA: 3.92/4.0.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="timeline-date">Internship</span>
+          <div>
+            <h3>PennDOT Automated Driving System</h3>
+            <p>Developed ROS message-passing software, MATLAB simulations, and integrated camera, LiDAR, and radar systems.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="timeline-date">Industry project</span>
+          <div>
+            <h3>Flowserve Hydraulic Submergence Project</h3>
+            <p>Designed a hydraulic test rig, ran CFD/FEA simulations, and used DFMEA to improve reliability.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="timeline-date">Leadership</span>
+          <div>
+            <h3>Community and Program Leadership</h3>
+            <p>Vice President of Asian Student Fitness Club and Program Leader for the Summer Bridge Engineering Program.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Toolbox</p>
+        <h2>The tools I use to turn ideas into working systems.</h2>
+      </div>
+      <div class="skill-board reveal">
+        <div>
+          <h3>Robotics & AI</h3>
+          <ul>
+            <li>ROS</li>
+            <li>LLM reasoning</li>
+            <li>VLM perception</li>
+            <li>Machine learning</li>
+            <li>Fine-tuning</li>
+            <li>Multi-agent planning</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Engineering</h3>
+          <ul>
+            <li>SolidWorks</li>
+            <li>OpenCAD</li>
+            <li>CFD/FEA</li>
+            <li>DFMEA</li>
+            <li>Hydraulic testing</li>
+            <li>Autonomous systems</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Programming & Analysis</h3>
+          <ul>
+            <li>Python</li>
+            <li>C++</li>
+            <li>MATLAB</li>
+            <li>Simulink</li>
+            <li>Gurobi</li>
+            <li>Minitab</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-card reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Looking for robotics, automation, or AI-enabled mechanical systems work?</h2>
+        <p>
+          I am building toward opportunities where intelligent robotic systems become more
+          practical, explainable, and useful in real environments.
+        </p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:zhaojiabao50@gmail.com">Email Me</a>
+          <a class="button button-secondary" href="assets/Jiabao-Zhao-Resume.pdf">Download Resume</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="project-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close project details">&times;</button>
+      <p class="project-kicker" id="modal-kicker"></p>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <ul class="modal-list" id="modal-list"></ul>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Jiabao Zhao</p>
+    <p>Built as a living portfolio for robotics, automation, and mechanical engineering.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
