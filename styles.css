@@ -235,9 +235,14 @@ button {
   aspect-ratio: 1;
   place-items: center;
   overflow: hidden;
-  background: var(--surface-soft);
+  color: var(--gold-text);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 42%),
+    linear-gradient(180deg, #f0e8d0 0%, var(--accent) 54%, #b9a149 100%);
   border: 1px solid var(--accent-strong);
   border-radius: 50%;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 900;
 }
 
 .portrait-core img {
@@ -245,6 +250,10 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: 50% 76%;
+}
+
+.portrait-placeholder span {
+  line-height: 1;
 }
 
 .portrait-badge {
@@ -572,6 +581,17 @@ h3 {
   border-color: var(--accent);
 }
 
+.document-tile.is-empty {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.document-tile.is-empty:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.08);
+}
+
 .document-icon {
   display: grid;
   width: 58px;
@@ -584,6 +604,59 @@ h3 {
 .document-tile strong,
 .document-tile small {
   display: block;
+}
+
+.activity-section {
+  background: color-mix(in srgb, var(--surface) 48%, var(--bg));
+  border-top: 1px solid var(--border);
+}
+
+.empty-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.empty-media-card {
+  display: grid;
+  min-height: 230px;
+  align-content: center;
+  gap: 10px;
+  padding: 26px;
+  color: var(--muted);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent),
+    var(--surface);
+  border: 1px dashed color-mix(in srgb, var(--border) 80%, var(--accent));
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.06);
+}
+
+.empty-media-card span {
+  display: inline-grid;
+  min-height: 34px;
+  place-items: center;
+  justify-self: center;
+  padding: 0 12px;
+  color: var(--gold-text);
+  background: var(--accent);
+  border: 1px solid var(--accent-strong);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.empty-media-card strong {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.empty-media-card p {
+  margin: 0;
 }
 
 .document-tile small {
@@ -1051,7 +1124,8 @@ h3 {
 
   .major-grid,
   .research-grid,
-  .skill-board {
+  .skill-board,
+  .empty-media-grid {
     grid-template-columns: 1fr;
   }
 
