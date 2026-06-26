@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Automated driving systems placeholder</title>
+  <desc id="desc">An autonomous vehicle with camera, radar, and lidar sensing arcs.</desc>
+  <rect width="900" height="900" fill="#f7f5f2"/>
+  <path d="M0 620h900v280H0Z" fill="#1a1a1a"/>
+  <path d="M450 620v280" stroke="#D9C06C" stroke-width="18" stroke-dasharray="60 45"/>
+  <g fill="none" stroke="#A08B3A" stroke-width="7" opacity=".62">
+    <path d="M452 442c-118-102-264-92-354-8"/>
+    <path d="M452 442c126-118 276-112 370-18"/>
+    <path d="M452 442c-70-64-150-64-218-12"/>
+    <path d="M452 442c76-70 160-70 236-10"/>
+  </g>
+  <path d="M250 520 330 386h240l88 134Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="14"/>
+  <rect x="206" y="504" width="494" height="142" rx="44" fill="#D9C06C" stroke="#A08B3A" stroke-width="14"/>
+  <rect x="360" y="414" width="178" height="78" rx="16" fill="#1e1e1e"/>
+  <circle cx="302" cy="652" r="52" fill="#1a1a1a" stroke="#fff" stroke-width="14"/>
+  <circle cx="604" cy="652" r="52" fill="#1a1a1a" stroke="#fff" stroke-width="14"/>
+  <rect x="418" y="348" width="68" height="38" rx="12" fill="#7fa28b" stroke="#1a1a1a" stroke-width="8"/>
+</svg>

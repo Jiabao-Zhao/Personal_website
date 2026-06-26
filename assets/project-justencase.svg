@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Just-EnCase placeholder</title>
+  <desc id="desc">A compact container with suction cups mounted to a surface.</desc>
+  <rect width="900" height="900" fill="#f7f5f2"/>
+  <rect x="150" y="188" width="600" height="520" rx="42" fill="#ffffff" stroke="#1a1a1a" stroke-width="14"/>
+  <rect x="228" y="286" width="444" height="286" rx="34" fill="#D9C06C" stroke="#A08B3A" stroke-width="12"/>
+  <rect x="294" y="240" width="312" height="72" rx="30" fill="#fff" stroke="#1a1a1a" stroke-width="10"/>
+  <g fill="#1a1a1a">
+    <circle cx="300" cy="628" r="44"/><circle cx="450" cy="628" r="44"/><circle cx="600" cy="628" r="44"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="300" cy="628" r="22"/><circle cx="450" cy="628" r="22"/><circle cx="600" cy="628" r="22"/>
+  </g>
+  <path d="M334 418h232" stroke="#4a3311" stroke-width="18" stroke-linecap="round"/>
+</svg>

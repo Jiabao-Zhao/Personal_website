@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Research presentations placeholder</title>
+  <desc id="desc">A research poster and presentation screen with chart elements.</desc>
+  <rect width="900" height="900" fill="#f7f5f2"/>
+  <rect x="160" y="150" width="580" height="430" rx="28" fill="#ffffff" stroke="#1a1a1a" stroke-width="14"/>
+  <rect x="214" y="212" width="246" height="48" rx="12" fill="#D9C06C"/>
+  <rect x="214" y="300" width="162" height="152" rx="18" fill="#1a1a1a"/>
+  <rect x="410" y="300" width="276" height="24" rx="12" fill="#d8d2c4"/>
+  <rect x="410" y="348" width="226" height="24" rx="12" fill="#d8d2c4"/>
+  <rect x="410" y="396" width="252" height="24" rx="12" fill="#d8d2c4"/>
+  <path d="M250 502h388" stroke="#A08B3A" stroke-width="12" stroke-linecap="round"/>
+  <path d="M450 580v124" stroke="#1a1a1a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M320 724h260" stroke="#1a1a1a" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="294" cy="376" r="42" fill="#D9C06C"/>
+  <path d="M292 334v84l64-42Z" fill="#4a3311"/>
+</svg>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Jiabao Zhao is a Penn State mechanical engineer working on robotics, automation, LLM-enabled robotic agents, computer vision, and human-robot collaborative assembly."
+    content="Jiabao Zhao is a robotics and mechanical engineering researcher working on AI-enabled robotic agents, computer vision, and human-robot collaborative assembly."
   />
   <title>Jiabao Zhao | Robotics & Mechanical Engineering</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,374 +14,342 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Jiabao Zhao home">JZ</a>
+  <header class="site-header" data-header>
+    <div class="header-left">
+      <a class="brand" href="#home" aria-label="Jiabao Zhao home">JZ</a>
+      <button class="icon-button theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+      </button>
+    </div>
+
     <nav class="nav-shell" aria-label="Primary navigation">
       <span class="nav-indicator" aria-hidden="true"></span>
       <a class="nav-link is-active" href="#home">Home</a>
       <a class="nav-link" href="#about">About</a>
       <a class="nav-link" href="#resume">Resume</a>
-      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#major-projects">Major Projects</a>
+      <a class="nav-link" href="#additional-projects">Additional</a>
       <a class="nav-link" href="#skills">Skills</a>
-      <a class="nav-link" href="#activity">Activity</a>
-      <a class="nav-link" href="#contact">Contact</a>
     </nav>
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <span aria-hidden="true">DM</span>
-    </button>
+
+    <div class="header-actions">
+      <a class="icon-button" href="https://github.com/Jiabao-Zhao" aria-label="GitHub profile" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.36-1.18-3.36-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.21-.25-4.54-1.1-4.54-4.92 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0 1 12 6.03c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.83-2.33 4.67-4.55 4.92.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+      </a>
+      <a class="icon-button" href="https://www.linkedin.com/in/jiabao-zhao/" aria-label="LinkedIn profile" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.94H3.75V20h3.19V8.94ZM5.35 4a1.84 1.84 0 1 0 0 3.68 1.84 1.84 0 0 0 0-3.68Zm15 9.88c0-3.04-1.62-4.45-3.78-4.45a3.25 3.25 0 0 0-2.94 1.62h-.04V8.94h-3.05V20h3.18v-5.47c0-1.44.27-2.84 2.06-2.84 1.76 0 1.78 1.65 1.78 2.93V20h3.19v-6.12h-.4Z"/></svg>
+      </a>
+      <button class="icon-button contact-open" type="button" aria-label="Open contact modal" data-open-contact>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5h15A2.5 2.5 0 0 1 22 7.5v9A2.5 2.5 0 0 1 19.5 19h-15A2.5 2.5 0 0 1 2 16.5v-9A2.5 2.5 0 0 1 4.5 5Zm0 2 7.5 5.12L19.5 7h-15Zm15 10a.5.5 0 0 0 .5-.5V8.88l-7.44 5.09a1 1 0 0 1-1.12 0L4 8.88v7.62a.5.5 0 0 0 .5.5h15Z"/></svg>
+      </button>
+      <button class="icon-button menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" data-menu-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v2H4V7Zm0 4h16v2H4v-2Zm0 4h16v2H4v-2Z"/></svg>
+      </button>
+    </div>
   </header>
 
+  <aside class="mobile-menu" aria-hidden="true" data-mobile-menu>
+    <div class="mobile-menu-panel">
+      <button class="icon-button mobile-close" type="button" aria-label="Close navigation menu" data-menu-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 1.4L6.4 19 5 17.6 17.6 5 19 6.4Z"/></svg>
+      </button>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#major-projects">Major Projects</a>
+      <a href="#additional-projects">Additional</a>
+      <a href="#skills">Skills</a>
+      <button type="button" data-open-contact>Contact</button>
+    </div>
+  </aside>
+
   <main>
-    <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-inner reveal">
-        <div class="portrait-ring" aria-label="Jiabao Zhao profile photo">
-          <div class="portrait-core">
-            <img src="assets/linkedin-profile.jpg" alt="Jiabao Zhao smiling in a profile portrait" />
-          </div>
-          <span class="portrait-badge badge-one">MS ME</span>
-          <span class="portrait-badge badge-two">ROS</span>
-          <span class="portrait-badge badge-three">LLM</span>
+    <section class="hero section-anchor" id="home">
+      <canvas class="wave-canvas" data-wave-canvas aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <div class="hero-photo reveal hero-reveal">
+          <img src="assets/linkedin-profile.jpg" alt="Jiabao Zhao profile portrait" />
         </div>
-
-        <p class="eyebrow">Mechanical Engineering | Robotics | AI Agents</p>
-        <h1>Jiabao Zhao</h1>
-        <p class="hero-subtitle">
-          I build robotics and automation systems that connect mechanical engineering,
-          machine perception, and LLM-based reasoning.
-        </p>
-
-        <div class="skill-cloud" aria-label="Featured skills">
-          <button type="button" data-scroll-target="skills">Python</button>
-          <button type="button" data-scroll-target="skills">ROS</button>
-          <button type="button" data-scroll-target="skills">LLM</button>
-          <button type="button" data-scroll-target="skills">VLM</button>
-          <button type="button" data-scroll-target="skills">Computer Vision</button>
-          <button type="button" data-scroll-target="skills">C++</button>
-          <button type="button" data-scroll-target="skills">MATLAB</button>
-        </div>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">View Projects</a>
-          <a class="button button-secondary" href="assets/Jiabao-Zhao-Resume.pdf">Resume</a>
+        <h1 class="reveal hero-reveal">Jiabao Zhao</h1>
+        <div class="hero-badges reveal hero-reveal" aria-label="Featured skills">
+          <span>Python</span>
+          <span>C++</span>
+          <span>ROS</span>
+          <span>Machine Learning</span>
+          <span>Computer Vision</span>
+          <span>Control Systems</span>
+          <span>Embedded AI</span>
         </div>
       </div>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="section-title reveal">
-        <p class="eyebrow">About me</p>
-        <h2>Robotics engineer shaped by research, automation, and human-centered systems.</h2>
+    <section class="page-section about-section section-anchor" id="about">
+      <div class="section-heading reveal">
+        <h2>About</h2>
+        <span aria-hidden="true"></span>
+        <p>Robotics, mechanical engineering, and AI-enabled systems for collaborative assembly.</p>
       </div>
 
-      <div class="about-stage">
-        <div class="lanyard-column left-column" aria-label="Education highlights">
-          <article class="lanyard-card reveal">
-            <span class="lanyard-pin"></span>
-            <p>Penn State</p>
-            <strong>M.S. Mechanical Engineering</strong>
-            <small>2025-present | GPA 4.0</small>
+      <div class="lanyard-stage" data-lanyard-stage>
+        <div class="lanyard-column left">
+          <article class="lanyard-card reveal" style="--tilt:-7deg; --delay:0ms">
+            <span class="lanyard-string"></span>
+            <div><strong>Penn State</strong><small>M.S. Mechanical Engineering</small><em>2025-2026</em></div>
           </article>
-          <article class="lanyard-card reveal">
-            <span class="lanyard-pin"></span>
-            <p>Penn State</p>
-            <strong>B.S. Mechanical Engineering</strong>
-            <small>2021-2025 | GPA 3.92</small>
+          <article class="lanyard-card reveal" style="--tilt:5deg; --delay:140ms">
+            <span class="lanyard-string"></span>
+            <div><strong>Penn State</strong><small>B.S. Mechanical Engineering</small><em>2021-2025</em></div>
+          </article>
+          <article class="lanyard-card reveal" style="--tilt:-3deg; --delay:260ms">
+            <span class="lanyard-string"></span>
+            <div><strong>Schreyer Honors College</strong><small>Honors Scholar</small><em>2025</em></div>
           </article>
         </div>
 
-        <article class="profile-card reveal">
-          <div class="profile-card-media">
-            <img src="assets/profile-photo.jpg" alt="Jiabao Zhao standing on a bridge overlooking a river" />
+        <button class="about-card reveal" type="button" data-open-bio>
+          <img src="assets/profile-photo.jpg" alt="Jiabao Zhao standing outdoors" />
+          <div>
+            <span>Biography</span>
+            <h3>Mechanical engineer building practical robot intelligence.</h3>
+            <p>Human-robot collaborative assembly, UR5e systems, RTDE control, vision-language reasoning, and adaptive task planning.</p>
           </div>
-          <div class="profile-card-body">
-            <p class="project-kicker">Biography</p>
-            <h3>Mechanical engineer working where robots meet real human instructions.</h3>
-            <p>
-              My current work focuses on human-robot collaborative assembly, UR5e robotic
-              systems, RTDE control, LLM/VLM-enabled robotic agents, computer vision, and
-              adaptive task planning. I like problems that require both engineering discipline
-              and practical imagination: sensing the environment, reasoning about the task,
-              and turning that reasoning into reliable robot behavior.
-            </p>
-            <p>
-              I also bring industry and leadership range from PennDOT automated driving
-              systems, Flowserve hydraulic testing, entrepreneurship, and student community
-              leadership.
-            </p>
-          </div>
-        </article>
+        </button>
 
-        <div class="lanyard-column right-column" aria-label="Professional highlights">
-          <article class="lanyard-card reveal">
-            <span class="lanyard-pin"></span>
-            <p>Research</p>
-            <strong>LLM robotic assembly</strong>
-            <small>COVILLM | Speech-to-Trajectory</small>
+        <div class="lanyard-column right">
+          <article class="lanyard-card reveal" style="--tilt:6deg; --delay:60ms">
+            <span class="lanyard-string"></span>
+            <div><strong>CAIS Lab</strong><small>Graduate Research Assistant</small><em>Robotics</em></div>
           </article>
-          <article class="lanyard-card reveal">
-            <span class="lanyard-pin"></span>
-            <p>Internship</p>
-            <strong>PennDOT ADS</strong>
-            <small>ROS | MATLAB | sensors</small>
+          <article class="lanyard-card reveal" style="--tilt:-5deg; --delay:180ms">
+            <span class="lanyard-string"></span>
+            <div><strong>PennDOT ADS</strong><small>Intern</small><em>Autonomous Systems</em></div>
+          </article>
+          <article class="lanyard-card reveal" style="--tilt:4deg; --delay:300ms">
+            <span class="lanyard-string"></span>
+            <div><strong>Flowserve Project</strong><small>Capstone</small><em>Mechanical Systems</em></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section document-section" id="resume">
-      <div class="section-title centered reveal">
-        <p class="eyebrow">Resume, research, and background</p>
-        <h2>Resume, CV, and transcripts.</h2>
+    <section class="page-section document-section section-anchor" id="resume">
+      <div class="section-heading reveal">
+        <h2>Resume</h2>
+        <span aria-hidden="true"></span>
+        <p>Documents open in preview modals when a public file is available.</p>
       </div>
-
       <div class="document-grid">
-        <a class="document-tile reveal" href="assets/Jiabao-Zhao-Resume.pdf">
-          <span class="document-icon">CV</span>
+        <button class="document-tile reveal" type="button" data-doc="resume">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h7l5 5v15H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm6 2v4h4l-4-4ZM8 13h8v-2H8v2Zm0 4h8v-2H8v2Z"/></svg></span>
           <strong>Resume</strong>
-          <small>Current public version</small>
-        </a>
-        <button class="document-tile is-empty reveal" type="button">
-          <span class="document-icon">CV+</span>
+        </button>
+        <button class="document-tile reveal" type="button" data-doc="cv">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4Zm9 0v5h5l-5-5ZM7 13h10v-2H7v2Zm0 4h7v-2H7v2Z"/></svg></span>
           <strong>Extended CV</strong>
-          <small>Placeholder</small>
         </button>
-        <button class="document-tile is-empty reveal" type="button">
-          <span class="document-icon">UG</span>
+        <button class="document-tile reveal" type="button" data-doc="undergraduate">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 8l11 5 9-4.09V16h2V8L12 3Zm-6 8.18V16c0 2.22 3.58 4 6 4s6-1.78 6-4v-4.82l-6 2.73-6-2.73Z"/></svg></span>
           <strong>Undergraduate Transcript</strong>
-          <small>Placeholder</small>
         </button>
-        <button class="document-tile is-empty reveal" type="button">
-          <span class="document-icon">GR</span>
+        <button class="document-tile reveal" type="button" data-doc="graduate">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Zm-7 8.2V15c0 2.76 4.03 5 7 5s7-2.24 7-5v-4.8l-7 3.5-7-3.5Z"/></svg></span>
           <strong>Graduate Transcript</strong>
-          <small>Placeholder</small>
-        </button>
-        <button class="document-tile reveal" type="button" data-scroll-target="research-list">
-          <span class="document-icon">RP</span>
-          <strong>Research</strong>
-          <small>Publications and frameworks</small>
-        </button>
-        <button class="document-tile reveal" type="button" data-scroll-target="projects">
-          <span class="document-icon">PR</span>
-          <strong>Projects</strong>
-          <small>Robotics and automation work</small>
         </button>
       </div>
     </section>
 
-    <section class="section projects-section" id="projects">
-      <div class="section-title reveal">
-        <p class="eyebrow">Major projects</p>
-        <h2>Robotics, AI reasoning, and mechanical systems.</h2>
+    <section class="page-section section-anchor" id="major-projects">
+      <div class="section-heading reveal">
+        <h2>Major Projects</h2>
+        <span aria-hidden="true"></span>
+        <p>Robotics, AI reasoning, manufacturing perception, planning, and mechanical systems.</p>
       </div>
-
       <div class="project-grid major-grid">
-        <article class="project-card large-card reveal" data-project="assembly">
-          <div class="project-media media-robot-arm" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div class="project-card-body">
-            <p class="project-kicker">Robotics & Automation</p>
+        <article class="project-card major-card reveal" data-project="assembly">
+          <img src="assets/project-ur5e.svg" alt="UR5e collaborative assembly thumbnail" />
+          <div class="project-overlay">
+            <p><span class="status-dot finished"></span>Finished</p>
             <h3>UR5e Collaborative Assembly System</h3>
-            <p>RTDE robot control, LLM reasoning, and VLM perception for assembly workflows.</p>
-            <ul class="tag-list">
-              <li>UR5e</li>
-              <li>RTDE</li>
-              <li>LLM</li>
-              <li>VLM</li>
-            </ul>
+            <div class="tag-row"><span>UR5e</span><span>RTDE</span><span>LLM</span></div>
           </div>
         </article>
-
-        <article class="project-card large-card reveal" data-project="agent">
-          <div class="project-media media-agent" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div class="project-card-body">
-            <p class="project-kicker">AI-enabled robotic agents</p>
-            <h3>Instruction-to-Action Robot Agent</h3>
-            <p>Converts human instructions into robot actions and coordinated task plans.</p>
-            <ul class="tag-list">
-              <li>Fine-tuning</li>
-              <li>Task reasoning</li>
-              <li>Multi-agent</li>
-            </ul>
+        <article class="project-card major-card reveal" data-project="agent">
+          <img src="assets/project-agent.svg" alt="AI-enabled robotic agent thumbnail" />
+          <div class="project-overlay">
+            <p><span class="status-dot progress"></span>In Progress</p>
+            <h3>AI-Enabled Robotic Agent</h3>
+            <div class="tag-row"><span>VLM</span><span>RAG</span><span>Planning</span></div>
           </div>
         </article>
-
-        <article class="project-card large-card reveal" data-project="vision">
-          <div class="project-media media-vision" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
+        <article class="project-card major-card reveal" data-project="vision">
+          <img src="assets/project-vision.svg" alt="Adaptive vision for manufacturing objects thumbnail" />
+          <div class="project-overlay">
+            <p><span class="status-dot progress"></span>In Progress</p>
+            <h3>Adaptive Vision for Novel Manufacturing Objects</h3>
+            <div class="tag-row"><span>YOLO</span><span>SAM</span><span>Point Clouds</span></div>
           </div>
-          <div class="project-card-body">
-            <p class="project-kicker">Computer vision</p>
-            <h3>Adaptive Vision for Novel Objects</h3>
-            <p>3D point-cloud processing with VLM reasoning, YOLO, and SAM-based methods.</p>
-            <ul class="tag-list">
-              <li>Point clouds</li>
-              <li>YOLO</li>
-              <li>SAM</li>
-            </ul>
+        </article>
+        <article class="project-card major-card reveal" data-project="mpc">
+          <img src="assets/project-mpc.svg" alt="RRT-based model predictive control thumbnail" />
+          <div class="project-overlay">
+            <p><span class="status-dot finished"></span>Finished</p>
+            <h3>RRT-based Model Predictive Control</h3>
+            <div class="tag-row"><span>RRT</span><span>MPC</span><span>MATLAB</span></div>
+          </div>
+        </article>
+        <article class="project-card major-card reveal" data-project="penndot">
+          <img src="assets/project-ads.svg" alt="PennDOT automated driving systems thumbnail" />
+          <div class="project-overlay">
+            <p><span class="status-dot finished"></span>Finished</p>
+            <h3>PennDOT Automated Driving Systems</h3>
+            <div class="tag-row"><span>ROS</span><span>LiDAR</span><span>Radar</span></div>
+          </div>
+        </article>
+        <article class="project-card major-card reveal" data-project="flowserve">
+          <img src="assets/project-flowserve.svg" alt="Flowserve hydraulic submergence project thumbnail" />
+          <div class="project-overlay">
+            <p><span class="status-dot finished"></span>Finished</p>
+            <h3>Flowserve Hydraulic Submergence Project</h3>
+            <div class="tag-row"><span>CFD</span><span>FEA</span><span>DFMEA</span></div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section more-section">
-      <div class="section-title reveal">
-        <p class="eyebrow">Additional work</p>
-        <h2>Engineering range beyond the main project cards.</h2>
+    <section class="page-section additional-section section-anchor" id="additional-projects">
+      <div class="section-heading reveal">
+        <h2>Additional Projects</h2>
+        <span aria-hidden="true"></span>
+        <p>Compact snapshots of research presentations, product work, and planning systems.</p>
       </div>
-
-      <div class="project-grid compact-grid">
-        <article class="project-card compact-card reveal" data-project="mpc">
-          <div class="mini-media media-path" aria-hidden="true"><span></span><span></span><span></span></div>
-          <p class="project-kicker">Planning & control</p>
-          <h3>RRT-based MPC</h3>
-          <p>Path planning and trajectory optimization for robotic systems.</p>
+      <div class="project-grid additional-grid">
+        <article class="project-card compact-card reveal" data-project="tensegrity">
+          <img src="assets/project-tensegrity.svg" alt="Hummingbird tensegrity shoulder thumbnail" />
+          <div><p><span class="status-dot finished"></span>Finished</p><h3>Hummingbird Tensegrity Shoulder</h3></div>
         </article>
-        <article class="project-card compact-card reveal" data-project="penndot">
-          <div class="mini-media media-sensors" aria-hidden="true"><span></span><span></span><span></span></div>
-          <p class="project-kicker">Autonomous systems</p>
-          <h3>PennDOT ADS</h3>
-          <p>ROS message passing, MATLAB simulation, camera, LiDAR, and radar integration.</p>
+        <article class="project-card compact-card reveal" data-project="justencase">
+          <img src="assets/project-justencase.svg" alt="Just-EnCase product thumbnail" />
+          <div><p><span class="status-dot finished"></span>Finished</p><h3>Just-EnCase</h3></div>
         </article>
-        <article class="project-card compact-card reveal" data-project="flowserve">
-          <div class="mini-media media-hydraulic" aria-hidden="true"><span></span><span></span><span></span></div>
-          <p class="project-kicker">Mechanical systems</p>
-          <h3>Flowserve hydraulic rig</h3>
-          <p>Hydraulic testing, CFD/FEA, DFMEA, and design validation.</p>
+        <article class="project-card compact-card reveal" data-project="manufacturing">
+          <img src="assets/project-manufacturing.svg" alt="Multi-agent manufacturing planning thumbnail" />
+          <div><p><span class="status-dot progress"></span>In Progress</p><h3>Multi-Agent Manufacturing Planning</h3></div>
         </article>
-        <article class="project-card compact-card reveal" data-project="startup">
-          <div class="mini-media media-startup" aria-hidden="true"><span></span><span></span><span></span></div>
-          <p class="project-kicker">Entrepreneurship</p>
-          <h3>Just-EnCase</h3>
-          <p>Startup concept for suction-cup container storage and product positioning.</p>
+        <article class="project-card compact-card reveal" data-project="presentations">
+          <img src="assets/project-presentations.svg" alt="CASE and MSEC research presentations thumbnail" />
+          <div><p><span class="status-dot finished"></span>Finished</p><h3>CASE/MSEC Research Presentations</h3></div>
         </article>
       </div>
     </section>
 
-    <section class="section research-section" id="research-list">
-      <div class="section-title reveal">
-        <p class="eyebrow">Research</p>
-        <h2>Publications and frameworks.</h2>
+    <section class="page-section skills-section section-anchor" id="skills">
+      <div class="section-heading reveal">
+        <h2>Skills</h2>
+        <span aria-hidden="true"></span>
+        <p>Interactive groups cycle automatically and pause when explored.</p>
       </div>
-      <div class="research-grid">
-        <article class="research-card reveal">
-          <span>01</span>
-          <h3>COVILLM</h3>
-          <p>An adaptive human-robot collaborative assembly framework using large language models.</p>
-        </article>
-        <article class="research-card reveal">
-          <span>02</span>
-          <h3>Speech-to-Trajectory</h3>
-          <p>An LLM-enabled human-robot collaborative framework for generating assembly tasks from verbal guidance.</p>
-        </article>
-        <article class="research-card reveal">
-          <span>03</span>
-          <h3>Adaptive Multi-Agent Manufacturing</h3>
-          <p>Task planning and coordination in multi-agent manufacturing systems using large language models.</p>
-        </article>
+      <div class="skills-panel reveal">
+        <div class="skill-controls" role="tablist" aria-label="Skill categories"></div>
+        <button class="cycle-toggle" type="button" data-cycle-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h7a4 4 0 0 1 0 8H9v-2h5a2 2 0 1 0 0-4H7.83l2.58 2.59L9 13 4 8l5-5 1.41 1.41L7.83 7H7Zm10 10h-7a4 4 0 0 1 0-8h5v2h-5a2 2 0 1 0 0 4h6.17l-2.58-2.59L15 11l5 5-5 5-1.41-1.41L16.17 17H17Z"/></svg>
+          <span>Pause</span>
+        </button>
+        <div class="skill-badge-grid" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="section skills-section" id="skills">
-      <div class="section-title centered reveal">
-        <p class="eyebrow">Skills</p>
-        <h2>Software, hardware, and methods I work with.</h2>
+    <section class="page-section activity-section section-anchor" id="activity">
+      <div class="section-heading reveal">
+        <h2>Coding Activity</h2>
+        <span aria-hidden="true"></span>
+        <p>Editable demo data for research output and engineering activity.</p>
       </div>
-
-      <div class="skill-board reveal">
-        <article>
-          <h3>Robotics & AI</h3>
-          <ul>
-            <li>ROS</li>
-            <li>LLM reasoning</li>
-            <li>VLM perception</li>
-            <li>Machine learning</li>
-            <li>Fine-tuning</li>
-            <li>Multi-agent planning</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Mechanical Systems</h3>
-          <ul>
-            <li>SolidWorks</li>
-            <li>OpenCAD</li>
-            <li>CFD/FEA</li>
-            <li>DFMEA</li>
-            <li>Hydraulic testing</li>
-            <li>Autonomous systems</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Programming & Analysis</h3>
-          <ul>
-            <li>Python</li>
-            <li>C++</li>
-            <li>MATLAB</li>
-            <li>Simulink</li>
-            <li>Gurobi</li>
-            <li>Minitab</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section activity-section" id="activity">
-      <div class="section-title centered reveal">
-        <p class="eyebrow">Activity</p>
-        <h2>Updates and project media will live here.</h2>
-      </div>
-      <div class="empty-media-grid">
-        <article class="empty-media-card reveal">
-          <span>Video</span>
-          <strong>UR5e assembly demo</strong>
-          <p>Placeholder for a project demo video.</p>
-        </article>
-        <article class="empty-media-card reveal">
-          <span>Gallery</span>
-          <strong>Computer vision results</strong>
-          <p>Placeholder for images, screenshots, or experimental outputs.</p>
-        </article>
-        <article class="empty-media-card reveal">
-          <span>Notes</span>
-          <strong>Research updates</strong>
-          <p>Placeholder for publications, posters, or lab updates.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <article class="contact-card reveal">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Ready to build the future?</h2>
-        <p>
-          I am interested in opportunities where intelligent robotic systems become more
-          practical, explainable, and useful in real environments.
-        </p>
-        <div class="contact-actions">
-          <a class="button button-primary" href="mailto:zhaojiabao50@gmail.com">Email Me</a>
-          <a class="button button-secondary" href="assets/Jiabao-Zhao-Resume.pdf">Download Resume</a>
+      <div class="activity-layout reveal">
+        <div class="chart-card">
+          <div class="chart" data-chart></div>
         </div>
-      </article>
+        <div class="stat-grid">
+          <article><strong>42</strong><span>Robot Experiments</span></article>
+          <article><strong>18</strong><span>Research Outputs</span></article>
+          <article><strong>126</strong><span>Code Contributions</span></article>
+          <article><strong>6</strong><span>Conference / Publication Work</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      <div>
+        <h2>Ready to Build the Future?</h2>
+        <p>Robotics, manufacturing intelligence, and human-centered automation.</p>
+      </div>
+      <button class="gold-button" type="button" data-open-contact>Get In Touch</button>
     </section>
   </main>
 
   <div class="modal" id="project-modal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
-    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" type="button" data-close-modal aria-label="Close project details">&times;</button>
-      <p class="project-kicker" id="modal-kicker"></p>
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <ul class="modal-list" id="modal-list"></ul>
+    <article class="modal-panel project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 1.4L6.4 19 5 17.6 17.6 5 19 6.4Z"/></svg>
+      </button>
+      <div class="modal-media"></div>
+      <div class="modal-copy">
+        <p class="modal-kicker"></p>
+        <h2 id="project-modal-title"></h2>
+        <p class="modal-description"></p>
+        <ul class="modal-list"></ul>
+        <div class="modal-actions"></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal" id="document-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-panel document-modal-panel" role="dialog" aria-modal="true" aria-labelledby="document-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 1.4L6.4 19 5 17.6 17.6 5 19 6.4Z"/></svg>
+      </button>
+      <h2 id="document-modal-title"></h2>
+      <div class="document-preview"></div>
+    </article>
+  </div>
+
+  <div class="modal" id="bio-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-panel bio-modal-panel" role="dialog" aria-modal="true" aria-labelledby="bio-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 1.4L6.4 19 5 17.6 17.6 5 19 6.4Z"/></svg>
+      </button>
+      <img src="assets/profile-photo.jpg" alt="Jiabao Zhao outdoors" />
+      <div>
+        <p class="modal-kicker">Biography</p>
+        <h2 id="bio-modal-title">Jiabao Zhao</h2>
+        <p>Jiabao Zhao is a Penn State mechanical engineer focused on robotics, AI-enabled robotic agents, computer vision, and human-robot collaborative assembly. His work connects UR5e robot control, RTDE communication, LLM/VLM reasoning, adaptive perception, and practical manufacturing workflows.</p>
+        <p>Across research, autonomous systems, and capstone engineering, Jiabao works at the point where mechanical design, sensing, planning, and reliable robot behavior have to meet in the real world.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal" id="contact-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-panel contact-modal-panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 1.4L6.4 19 5 17.6 17.6 5 19 6.4Z"/></svg>
+      </button>
+      <p class="modal-kicker">Contact</p>
+      <h2 id="contact-modal-title">Get in Touch</h2>
+      <div class="contact-links">
+        <a href="mailto:zhaojiabao50@gmail.com">zhaojiabao50@gmail.com</a>
+        <a href="https://github.com/Jiabao-Zhao" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jiabao-zhao/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="assets/Jiabao-Zhao-Resume.pdf">Resume</a>
+      </div>
     </article>
   </div>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Jiabao Zhao</p>
-    <p>Built with HTML, CSS, and JavaScript.</p>
+    <span>&copy; <span id="year"></span> Jiabao Zhao</span>
+    <button type="button" data-open-contact>Contact</button>
   </footer>
 
   <script src="app.js"></script>

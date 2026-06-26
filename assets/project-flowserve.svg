@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Flowserve hydraulic submergence placeholder</title>
+  <desc id="desc">A hydraulic test rig with flowing water and pump geometry.</desc>
+  <rect width="900" height="900" fill="#f7f5f2"/>
+  <rect x="130" y="170" width="640" height="550" rx="28" fill="#ffffff" stroke="#1a1a1a" stroke-width="14"/>
+  <path d="M152 556c80-52 156-50 230 4s148 55 234 0 118-56 132-50v190H152Z" fill="#7a9eb7" opacity=".82"/>
+  <path d="M226 568c90-56 172-54 248 2s150 58 248 0" fill="none" stroke="#f7f5f2" stroke-width="10" opacity=".72"/>
+  <g fill="#D9C06C" stroke="#A08B3A" stroke-width="10">
+    <rect x="374" y="256" width="152" height="252" rx="22"/>
+    <circle cx="450" cy="518" r="92"/>
+  </g>
+  <path d="M450 448v140M380 518h140" stroke="#4a3311" stroke-width="24" stroke-linecap="round"/>
+  <path d="M270 292h360M270 338h360" stroke="#1a1a1a" stroke-width="16" stroke-linecap="round"/>
+  <g fill="#bf7257" opacity=".9">
+    <circle cx="626" cy="606" r="12"/><circle cx="660" cy="648" r="8"/><circle cx="280" cy="630" r="9"/>
+  </g>
+</svg>

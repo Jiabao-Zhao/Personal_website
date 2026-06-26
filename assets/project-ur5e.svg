@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">UR5e collaborative assembly placeholder</title>
+  <desc id="desc">A stylized robot arm assembling gold and graphite blocks on a work table.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#F0E8D0"/>
+      <stop offset=".55" stop-color="#D9C06C"/>
+      <stop offset="1" stop-color="#B9A149"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#f7f5f2"/>
+      <stop offset="1" stop-color="#ded8c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <path d="M0 660c155-66 287-74 432-24 151 52 279 45 468-47v311H0Z" fill="#1a1a1a" opacity=".88"/>
+  <rect x="148" y="604" width="604" height="42" rx="21" fill="#2d2d2d"/>
+  <rect x="520" y="458" width="130" height="130" rx="14" fill="url(#gold)" stroke="#A08B3A" stroke-width="10"/>
+  <rect x="660" y="514" width="70" height="70" rx="10" fill="#fff" stroke="#555" stroke-width="8"/>
+  <circle cx="270" cy="604" r="52" fill="#1a1a1a" stroke="url(#gold)" stroke-width="18"/>
+  <path d="M301 572 418 421" stroke="#4f6f81" stroke-width="54" stroke-linecap="round"/>
+  <circle cx="424" cy="414" r="48" fill="#fff" stroke="#1a1a1a" stroke-width="16"/>
+  <path d="M456 405 584 483" stroke="#7fa28b" stroke-width="46" stroke-linecap="round"/>
+  <circle cx="600" cy="492" r="36" fill="url(#gold)" stroke="#A08B3A" stroke-width="12"/>
+  <path d="M628 506h72" stroke="#1a1a1a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M718 490v44M750 490v44" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
+  <g fill="none" stroke="#A08B3A" stroke-width="3" opacity=".42">
+    <path d="M116 172c96-44 194-44 294 0s201 44 303 0"/>
+    <path d="M92 226c96-44 194-44 294 0s201 44 303 0"/>
+    <path d="M158 280c96-44 194-44 294 0s201 44 303 0"/>
+  </g>
+</svg>

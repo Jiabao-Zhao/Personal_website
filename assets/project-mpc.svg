@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">RRT based model predictive control placeholder</title>
+  <desc id="desc">A planned path through obstacles with prediction horizons.</desc>
+  <rect width="900" height="900" fill="#f7f5f2"/>
+  <g fill="#1a1a1a" opacity=".12">
+    <rect x="130" y="160" width="140" height="170" rx="20"/>
+    <rect x="600" y="146" width="150" height="200" rx="20"/>
+    <rect x="380" y="402" width="170" height="138" rx="20"/>
+    <rect x="120" y="602" width="214" height="120" rx="20"/>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M110 760C230 608 225 430 370 384c132-42 182-172 356-224" stroke="#d6c070" stroke-width="12"/>
+    <path d="M110 760 226 640 286 522 370 384 492 302 604 216 726 160" stroke="#1a1a1a" stroke-width="4" stroke-dasharray="14 16"/>
+    <path d="M194 676c48 18 98 8 142-30M308 502c56 34 110 30 160-12M506 292c48 34 100 34 158 0" stroke="#A08B3A" stroke-width="8"/>
+  </g>
+  <g fill="#fff" stroke="#1a1a1a" stroke-width="8">
+    <circle cx="110" cy="760" r="26"/><circle cx="226" cy="640" r="18"/><circle cx="286" cy="522" r="18"/><circle cx="370" cy="384" r="18"/><circle cx="492" cy="302" r="18"/><circle cx="604" cy="216" r="18"/><circle cx="726" cy="160" r="26"/>
+  </g>
+  <g fill="#D9C06C" stroke="#A08B3A" stroke-width="7">
+    <circle cx="734" cy="534" r="54"/>
+    <path d="M710 535h48M734 511v48" stroke="#4a3311" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>
