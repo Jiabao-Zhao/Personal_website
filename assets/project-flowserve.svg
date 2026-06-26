@@ -1,17 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
-  <title id="title">Flowserve hydraulic submergence placeholder</title>
-  <desc id="desc">A hydraulic test rig with flowing water and pump geometry.</desc>
-  <rect width="900" height="900" fill="#f7f5f2"/>
-  <rect x="130" y="170" width="640" height="550" rx="28" fill="#ffffff" stroke="#1a1a1a" stroke-width="14"/>
-  <path d="M152 556c80-52 156-50 230 4s148 55 234 0 118-56 132-50v190H152Z" fill="#7a9eb7" opacity=".82"/>
-  <path d="M226 568c90-56 172-54 248 2s150 58 248 0" fill="none" stroke="#f7f5f2" stroke-width="10" opacity=".72"/>
-  <g fill="#D9C06C" stroke="#A08B3A" stroke-width="10">
-    <rect x="374" y="256" width="152" height="252" rx="22"/>
-    <circle cx="450" cy="518" r="92"/>
-  </g>
-  <path d="M450 448v140M380 518h140" stroke="#4a3311" stroke-width="24" stroke-linecap="round"/>
-  <path d="M270 292h360M270 338h360" stroke="#1a1a1a" stroke-width="16" stroke-linecap="round"/>
-  <g fill="#bf7257" opacity=".9">
-    <circle cx="626" cy="606" r="12"/><circle cx="660" cy="648" r="8"/><circle cx="280" cy="630" r="9"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img">
+  <defs><linearGradient id="water" x1="0" x2="1"><stop stop-color="#6f9bb7"/><stop offset="1" stop-color="#9bbfcb"/></linearGradient><linearGradient id="gold" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f0e8d0"/><stop offset=".55" stop-color="#d9c06c"/><stop offset="1" stop-color="#b9a149"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-opacity=".26"/></filter></defs>
+  <rect width="1200" height="1200" fill="#f7f5f2"/>
+  <g filter="url(#shadow)"><rect x="164" y="184" width="872" height="744" rx="38" fill="#fff" stroke="#1a1a1a" stroke-width="16"/><path d="M190 708c108-72 214-68 316 6s202 76 316 0 158-78 188-62v246H190Z" fill="url(#water)" opacity=".9"/><path d="M286 724c116-78 224-76 328 0s210 78 326 0" fill="none" stroke="#fff" stroke-width="12" opacity=".75"/><rect x="498" y="324" width="204" height="330" rx="26" fill="url(#gold)" stroke="#a08b3a" stroke-width="12"/><circle cx="600" cy="672" r="118" fill="url(#gold)" stroke="#a08b3a" stroke-width="12"/><path d="M600 584v176M512 672h176" stroke="#4a3311" stroke-width="28" stroke-linecap="round"/><path d="M350 366h500M350 430h500" stroke="#1a1a1a" stroke-width="18" stroke-linecap="round"/></g>
 </svg>

@@ -1,24 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
-  <title id="title">Multi-agent manufacturing planning placeholder</title>
-  <desc id="desc">Manufacturing work cells connected by planning arrows.</desc>
-  <rect width="900" height="900" fill="#f7f5f2"/>
-  <g fill="#ffffff" stroke="#1a1a1a" stroke-width="10">
-    <rect x="120" y="180" width="220" height="170" rx="24"/>
-    <rect x="560" y="180" width="220" height="170" rx="24"/>
-    <rect x="340" y="550" width="220" height="170" rx="24"/>
-  </g>
-  <g fill="none" stroke="#A08B3A" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M340 264h192"/>
-    <path d="m504 222 50 42-50 42"/>
-    <path d="M610 354 504 526"/>
-    <path d="m552 510-60 34 0-70"/>
-    <path d="M340 636H214V380"/>
-    <path d="m174 420 40-56 40 56"/>
-  </g>
-  <g fill="#D9C06C" stroke="#A08B3A" stroke-width="8">
-    <circle cx="230" cy="265" r="44"/><circle cx="670" cy="265" r="44"/><circle cx="450" cy="635" r="44"/>
-  </g>
-  <g font-family="Inter, Arial" font-size="34" font-weight="900" fill="#4a3311" text-anchor="middle">
-    <text x="230" y="276">A1</text><text x="670" y="276">A2</text><text x="450" y="646">A3</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img">
+  <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f7f5f2"/><stop offset="1" stop-color="#d8ddd9"/></linearGradient><linearGradient id="gold" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f0e8d0"/><stop offset=".55" stop-color="#d9c06c"/><stop offset="1" stop-color="#b9a149"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-opacity=".22"/></filter></defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <g filter="url(#shadow)" fill="#fff" stroke="#1a1a1a" stroke-width="12"><rect x="150" y="230" width="292" height="220" rx="28"/><rect x="758" y="230" width="292" height="220" rx="28"/><rect x="454" y="746" width="292" height="220" rx="28"/></g>
+  <g fill="none" stroke="#a08b3a" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M442 340h264"/><path d="m668 284 70 56-70 56"/><path d="M820 462 680 708"/><path d="m750 690-84 48 0-96"/><path d="M454 856H272V496"/><path d="m218 552 54-76 54 76"/></g>
+  <g fill="url(#gold)" stroke="#a08b3a" stroke-width="10"><circle cx="296" cy="340" r="58"/><circle cx="904" cy="340" r="58"/><circle cx="600" cy="856" r="58"/></g>
+  <g font-family="Inter,Arial" font-size="42" font-weight="900" fill="#4a3311" text-anchor="middle"><text x="296" y="354">A1</text><text x="904" y="354">A2</text><text x="600" y="870">A3</text></g>
 </svg>

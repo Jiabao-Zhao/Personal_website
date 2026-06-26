@@ -1,32 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
-  <title id="title">UR5e collaborative assembly placeholder</title>
-  <desc id="desc">A stylized robot arm assembling gold and graphite blocks on a work table.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img">
   <defs>
-    <linearGradient id="gold" x1="0" x2="0" y1="0" y2="1">
-      <stop stop-color="#F0E8D0"/>
-      <stop offset=".55" stop-color="#D9C06C"/>
-      <stop offset="1" stop-color="#B9A149"/>
-    </linearGradient>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop stop-color="#f7f5f2"/>
-      <stop offset="1" stop-color="#ded8c8"/>
-    </linearGradient>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset=".55" stop-color="#e8e2d3"/><stop offset="1" stop-color="#bfc8ca"/></linearGradient>
+    <linearGradient id="gold" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f5efd9"/><stop offset=".52" stop-color="#d9c06c"/><stop offset="1" stop-color="#a98f34"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#111" flood-opacity=".28"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
   </defs>
-  <rect width="900" height="900" fill="url(#bg)"/>
-  <path d="M0 660c155-66 287-74 432-24 151 52 279 45 468-47v311H0Z" fill="#1a1a1a" opacity=".88"/>
-  <rect x="148" y="604" width="604" height="42" rx="21" fill="#2d2d2d"/>
-  <rect x="520" y="458" width="130" height="130" rx="14" fill="url(#gold)" stroke="#A08B3A" stroke-width="10"/>
-  <rect x="660" y="514" width="70" height="70" rx="10" fill="#fff" stroke="#555" stroke-width="8"/>
-  <circle cx="270" cy="604" r="52" fill="#1a1a1a" stroke="url(#gold)" stroke-width="18"/>
-  <path d="M301 572 418 421" stroke="#4f6f81" stroke-width="54" stroke-linecap="round"/>
-  <circle cx="424" cy="414" r="48" fill="#fff" stroke="#1a1a1a" stroke-width="16"/>
-  <path d="M456 405 584 483" stroke="#7fa28b" stroke-width="46" stroke-linecap="round"/>
-  <circle cx="600" cy="492" r="36" fill="url(#gold)" stroke="#A08B3A" stroke-width="12"/>
-  <path d="M628 506h72" stroke="#1a1a1a" stroke-width="18" stroke-linecap="round"/>
-  <path d="M718 490v44M750 490v44" stroke="#1a1a1a" stroke-width="10" stroke-linecap="round"/>
-  <g fill="none" stroke="#A08B3A" stroke-width="3" opacity=".42">
-    <path d="M116 172c96-44 194-44 294 0s201 44 303 0"/>
-    <path d="M92 226c96-44 194-44 294 0s201 44 303 0"/>
-    <path d="M158 280c96-44 194-44 294 0s201 44 303 0"/>
+  <rect width="1200" height="1200" fill="url(#sky)"/>
+  <rect width="1200" height="1200" filter="url(#grain)" opacity=".45"/>
+  <path d="M0 828c186-96 370-108 552-36 222 88 374 30 648-96v504H0Z" fill="#151515"/>
+  <g opacity=".34" stroke="#a08b3a" stroke-width="3" fill="none">
+    <path d="M80 210c155-62 306-62 454 0s294 62 438 0"/>
+    <path d="M34 286c155-62 306-62 454 0s294 62 438 0"/>
+    <path d="M142 362c155-62 306-62 454 0s294 62 438 0"/>
   </g>
+  <g filter="url(#shadow)">
+    <rect x="144" y="800" width="744" height="58" rx="29" fill="#2d2d2d"/>
+    <rect x="646" y="614" width="182" height="180" rx="22" fill="url(#gold)" stroke="#a08b3a" stroke-width="10"/>
+    <rect x="840" y="662" width="104" height="104" rx="18" fill="#f8f7f3" stroke="#252525" stroke-width="8"/>
+    <circle cx="300" cy="800" r="72" fill="#191919" stroke="url(#gold)" stroke-width="22"/>
+    <path d="M344 754 520 534" stroke="#597985" stroke-width="72" stroke-linecap="round"/>
+    <circle cx="526" cy="526" r="64" fill="#f7f5f2" stroke="#1a1a1a" stroke-width="18"/>
+    <path d="M572 518 734 616" stroke="#78a08a" stroke-width="62" stroke-linecap="round"/>
+    <circle cx="758" cy="628" r="48" fill="url(#gold)" stroke="#a08b3a" stroke-width="13"/>
+    <path d="M794 646h96" stroke="#1a1a1a" stroke-width="22" stroke-linecap="round"/>
+    <path d="M922 624v60M964 624v60" stroke="#1a1a1a" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <rect x="98" y="112" width="1004" height="786" rx="42" fill="none" stroke="#fff" stroke-opacity=".42" stroke-width="2"/>
 </svg>

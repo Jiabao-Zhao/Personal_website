@@ -196,6 +196,49 @@ const activityData = [
   { label: "Control Runs", value: 55 }
 ];
 
+const skillIcons = {
+  UR5e: "UR",
+  RTDE: "RT",
+  ROS: "RO",
+  "MoveL / ServoL": "MV",
+  MPC: "MP",
+  RRT: "RR",
+  DMP: "DM",
+  "Trajectory Control": "TC",
+  "LLM Agents": "LA",
+  "VLM Reasoning": "VR",
+  RAG: "RG",
+  "Fine-tuning": "FT",
+  "Multi-agent Planning": "MA",
+  "Task Decomposition": "TD",
+  "Prompt Design": "PD",
+  Evaluation: "EV",
+  "RealSense D435": "RS",
+  "3D Point Clouds": "3D",
+  YOLO: "YO",
+  SAM: "SA",
+  OpenCV: "CV",
+  "Pose / Localization": "PL",
+  Segmentation: "SG",
+  "Spatial Reasoning": "SR",
+  SolidWorks: "SW",
+  CFD: "CF",
+  FEA: "FE",
+  DFMEA: "DF",
+  "Hydraulic Testing": "HT",
+  Manufacturing: "MF",
+  "Mechanical Design": "MD",
+  Validation: "VA",
+  Python: "PY",
+  "C++": "C+",
+  MATLAB: "ML",
+  Simulink: "SL",
+  Gurobi: "GB",
+  "Data Analysis": "DA",
+  "Control Scripts": "CS",
+  Automation: "AU"
+};
+
 const root = document.documentElement;
 const body = document.body;
 const header = document.querySelector("[data-header]");
@@ -225,6 +268,14 @@ window.addEventListener("scroll", updateHeader, { passive: true });
 
 const navLinks = [...document.querySelectorAll(".nav-link")];
 const indicator = document.querySelector(".nav-indicator");
+const navTargets = navLinks
+  .map((link) => ({
+    link,
+    id: link.getAttribute("href")?.slice(1),
+    section: document.querySelector(link.getAttribute("href"))
+  }))
+  .filter((item) => item.id && item.section);
+let navRaf = 0;
 
 function moveIndicator(link) {
   if (!link || !indicator) return;
@@ -239,8 +290,46 @@ function setActiveNav(id) {
   moveIndicator(active);
 }
 
-window.addEventListener("load", () => moveIndicator(document.querySelector(".nav-link.is-active")));
-window.addEventListener("resize", () => moveIndicator(document.querySelector(".nav-link.is-active")));
+function lerp(start, end, amount) {
+  return start + (end - start) * amount;
+}
+
+function updateNavIndicatorFluid() {
+  navRaf = 0;
+  if (!indicator || !navTargets.length || getComputedStyle(indicator).display === "none") return;
+
+  const sampleY = window.scrollY + window.innerHeight * 0.36;
+  let current = navTargets[0];
+  let next = navTargets[0];
+
+  for (let i = 0; i < navTargets.length; i += 1) {
+    const item = navTargets[i];
+    const following = navTargets[i + 1] || item;
+    if (sampleY >= item.section.offsetTop) {
+      current = item;
+      next = following;
+    }
+  }
+
+  const start = current.section.offsetTop;
+  const end = next.section.offsetTop === start ? start + current.section.offsetHeight : next.section.offsetTop;
+  const progress = Math.min(1, Math.max(0, (sampleY - start) / Math.max(1, end - start)));
+  const active = progress > 0.54 ? next : current;
+
+  navLinks.forEach((link) => link.classList.toggle("is-active", link === active.link));
+  indicator.style.width = `${lerp(current.link.offsetWidth, next.link.offsetWidth, progress)}px`;
+  indicator.style.transform = `translateX(${lerp(current.link.offsetLeft, next.link.offsetLeft, progress) - 4}px)`;
+  indicator.style.opacity = "1";
+}
+
+function scheduleNavUpdate() {
+  if (navRaf) return;
+  navRaf = requestAnimationFrame(updateNavIndicatorFluid);
+}
+
+window.addEventListener("load", scheduleNavUpdate);
+window.addEventListener("resize", scheduleNavUpdate);
+window.addEventListener("scroll", scheduleNavUpdate, { passive: true });
 
 const observedSections = [...document.querySelectorAll("#home, #about, #resume, #major-projects, #additional-projects, #skills")];
 const sectionObserver = new IntersectionObserver(
@@ -248,7 +337,7 @@ const sectionObserver = new IntersectionObserver(
     const visible = entries
       .filter((entry) => entry.isIntersecting)
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setActiveNav(visible.target.id);
+    if (visible) scheduleNavUpdate();
   },
   { rootMargin: "-34% 0px -54% 0px", threshold: [0.12, 0.3, 0.6] }
 );
@@ -384,16 +473,21 @@ function openModal(modal) {
 
 function closeActiveModal() {
   if (!activeModal) return;
+  const closingModal = activeModal;
+  const projectPanel = closingModal.querySelector(".project-modal-panel");
+  if (projectPanel) projectPanel.classList.add("is-preparing");
   activeModal.classList.remove("is-open");
   activeModal.setAttribute("aria-hidden", "true");
   body.classList.remove("modal-open");
-  const panel = activeModal.querySelector(".project-modal-panel");
-  if (panel) panel.style.transform = "";
+  if (projectPanel) {
+    projectPanel.style.transform = "";
+    setTimeout(() => projectPanel.classList.remove("is-preparing"), 220);
+  }
   if (selectedCard) {
     const restoredCard = selectedCard;
     restoredCard.classList.remove("is-hidden");
     restoredCard.classList.add("card-restored");
-    setTimeout(() => restoredCard.classList.remove("card-restored"), 360);
+    setTimeout(() => restoredCard.classList.remove("card-restored"), 430);
     selectedCard = null;
   }
   activeModal = null;
@@ -416,7 +510,10 @@ function openProject(projectId, card) {
   if (!project || !modal) return;
 
   const panel = modal.querySelector(".project-modal-panel");
-  modal.querySelector(".modal-media").innerHTML = `<img src="${project.media}" alt="${project.title} media preview">`;
+  const mediaMarkup = project.media?.match(/\.(mp4|webm|mov)$/i)
+    ? `<video src="${project.media}" autoplay muted loop playsinline controls></video>`
+    : `<img src="${project.media}" alt="${project.title} media preview">`;
+  modal.querySelector(".modal-media").innerHTML = mediaMarkup;
   modal.querySelector(".modal-kicker").textContent = project.kicker;
   modal.querySelector("#project-modal-title").textContent = project.title;
   modal.querySelector(".modal-description").textContent = project.description;
@@ -427,20 +524,22 @@ function openProject(projectId, card) {
 
   const rect = card.getBoundingClientRect();
   selectedCard = card;
-  selectedCard.classList.add("is-hidden");
   openModal(modal);
 
   if (panel) {
+    panel.classList.add("is-preparing");
     const panelRect = panel.getBoundingClientRect();
     const dx = rect.left + rect.width / 2 - (panelRect.left + panelRect.width / 2);
     const dy = rect.top + rect.height / 2 - (panelRect.top + panelRect.height / 2);
     const sx = Math.max(0.2, rect.width / panelRect.width);
     const sy = Math.max(0.2, rect.height / panelRect.height);
     panel.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
-    panel.style.borderRadius = "14px";
+    panel.style.borderRadius = `${getComputedStyle(card).borderRadius || "12px"}`;
     requestAnimationFrame(() => {
+      setTimeout(() => selectedCard?.classList.add("is-hidden"), 70);
       panel.style.transform = "translate(0, 0) scale(1)";
-      panel.style.borderRadius = "18px";
+      panel.style.borderRadius = "14px";
+      setTimeout(() => panel.classList.remove("is-preparing"), 260);
     });
   }
 }
@@ -457,6 +556,20 @@ document.querySelectorAll("[data-project]").forEach((card) => {
   });
 });
 
+document.querySelectorAll(".lanyard-card").forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 10;
+    card.style.setProperty("--hover-x", `${x}px`);
+    card.style.setProperty("--hover-y", `${y}px`);
+  });
+  card.addEventListener("pointerleave", () => {
+    card.style.setProperty("--hover-x", "0px");
+    card.style.setProperty("--hover-y", "0px");
+  });
+});
+
 function openDocument(docId) {
   const doc = docs[docId];
   const modal = document.getElementById("document-modal");
@@ -465,7 +578,11 @@ function openDocument(docId) {
   modal.querySelector("#document-modal-title").textContent = doc.title;
   modal.querySelector(".document-preview").innerHTML = doc.available
     ? `<iframe src="${doc.file}" title="${doc.title} preview"></iframe>`
-    : `<div class="coming-soon">${doc.message}</div>`;
+    : `<div class="coming-soon">
+        <strong>Coming soon</strong>
+        <span>${doc.message} This document button is intentionally kept active so the preview experience stays consistent once the file is added.</span>
+        <div class="disabled-preview" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>`;
   openModal(modal);
 }
 
@@ -499,7 +616,10 @@ function renderSkills(index) {
   });
 
   badgeGrid.innerHTML = group.skills
-    .map((skill, skillIndex) => `<span class="skill-badge" style="animation-delay:${skillIndex * 36}ms">${skill}</span>`)
+    .map((skill, skillIndex) => {
+      const icon = skillIcons[skill] || skill.slice(0, 2).toUpperCase();
+      return `<span class="skill-badge" style="animation-delay:${skillIndex * 36}ms"><span class="skill-icon">${icon}</span>${skill}</span>`;
+    })
     .join("");
 }
 
@@ -539,17 +659,62 @@ function renderChart() {
   const chart = document.querySelector("[data-chart]");
   if (!chart) return;
   const max = Math.max(...activityData.map((item) => item.value));
-  chart.innerHTML = activityData
-    .map((item) => {
-      const height = Math.max(10, Math.round((item.value / max) * 100));
-      return `
-        <div class="chart-bar" title="${item.label}: ${item.value}">
-          <span class="chart-fill" style="height:${height}%"></span>
-          <span class="chart-label">${item.label.split(" ")[0]}</span>
-        </div>
-      `;
-    })
-    .join("");
+  const width = 760;
+  const height = 310;
+  const padding = { top: 28, right: 34, bottom: 48, left: 42 };
+  const usableWidth = width - padding.left - padding.right;
+  const usableHeight = height - padding.top - padding.bottom;
+  const points = activityData.map((item, index) => {
+    const x = padding.left + (index / Math.max(1, activityData.length - 1)) * usableWidth;
+    const y = padding.top + usableHeight - (item.value / max) * usableHeight;
+    return { ...item, x, y };
+  });
+  const linePath = points.map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`).join(" ");
+  const areaPath = `${linePath} L ${points[points.length - 1].x.toFixed(1)} ${height - padding.bottom} L ${points[0].x.toFixed(1)} ${height - padding.bottom} Z`;
+
+  chart.innerHTML = `
+    <svg class="area-chart-svg" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-label="Activity area chart">
+      <defs>
+        <linearGradient id="activityAreaGradient" x1="0" x2="0" y1="0" y2="1">
+          <stop stop-color="#D9C06C" stop-opacity=".48"/>
+          <stop offset=".72" stop-color="#D9C06C" stop-opacity=".12"/>
+          <stop offset="1" stop-color="#D9C06C" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="area-fill" d="${areaPath}"></path>
+      <path class="area-line" d="${linePath}"></path>
+      ${points
+        .map(
+          (point, index) => `
+            <circle class="area-point" cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="7" data-point="${index}" tabindex="0"></circle>
+            <text class="area-label" x="${point.x.toFixed(1)}" y="${height - 17}">${point.label.split(" ")[0]}</text>
+          `
+        )
+        .join("")}
+    </svg>
+    <div class="area-tooltip" data-chart-tooltip><strong></strong><span></span></div>
+  `;
+
+  const tooltip = chart.querySelector("[data-chart-tooltip]");
+  chart.querySelectorAll(".area-point").forEach((point) => {
+    const show = () => {
+      const item = points[Number(point.dataset.point)];
+      tooltip.querySelector("strong").textContent = item.label;
+      tooltip.querySelector("span").textContent = `${item.value} logged items`;
+      tooltip.style.left = `${(item.x / width) * 100}%`;
+      tooltip.style.top = `${(item.y / height) * 100}%`;
+      tooltip.classList.add("is-visible");
+      point.classList.add("is-active");
+    };
+    const hide = () => {
+      tooltip.classList.remove("is-visible");
+      point.classList.remove("is-active");
+    };
+    point.addEventListener("mouseenter", show);
+    point.addEventListener("focus", show);
+    point.addEventListener("mouseleave", hide);
+    point.addEventListener("blur", hide);
+  });
 }
 
 renderChart();
